@@ -1,19 +1,17 @@
+import type { ReactNode } from "react";
 import { BatteryIcon, FanIcon, FilterIcon, HandIcon, ShieldIcon } from "./icons";
-import type { ComponentType, SVGProps } from "react";
 
-function AiIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <span {...props} style={{ fontSize: "1em", fontWeight: 950 }}>AI</span>
-  );
+function AiIcon() {
+  return <span style={{ fontSize: "1em", fontWeight: 950 }}>AI</span>;
 }
 
-const reasons: [ComponentType<SVGProps<SVGSVGElement>>, string, string][] = [
-  [AiIcon, "Inteligentná navigácia", "Presné mapovanie trasy bez vynechaných miest."],
-  [FanIcon, "Výkonné sanie", "Silný výkon pre prach, lístie aj jemné nečistoty."],
-  [FilterIcon, "Pokročilá filtrácia", "Jemná filtrácia pre čistú a vizuálne sviežu vodu."],
-  [BatteryIcon, "Dlhá výdrž", "Až 240 minút čistenia podľa modelu."],
-  [HandIcon, "Jednoduchá údržba", "Vybrať, opláchnuť, nabiť a hotovo."],
-  [ShieldIcon, "Servis a záruka", "Podpora pre zákazníkov a jasné podmienky nákupu."]
+const reasons: { icon: ReactNode; title: string; text: string }[] = [
+  { icon: <AiIcon />, title: "Inteligentná navigácia", text: "Presné mapovanie trasy bez vynechaných miest." },
+  { icon: <FanIcon />, title: "Výkonné sanie", text: "Silný výkon pre prach, lístie aj jemné nečistoty." },
+  { icon: <FilterIcon />, title: "Pokročilá filtrácia", text: "Jemná filtrácia pre čistú a vizuálne sviežu vodu." },
+  { icon: <BatteryIcon />, title: "Dlhá výdrž", text: "Až 240 minút čistenia podľa modelu." },
+  { icon: <HandIcon />, title: "Jednoduchá údržba", text: "Vybrať, opláchnuť, nabiť a hotovo." },
+  { icon: <ShieldIcon />, title: "Servis a záruka", text: "Podpora pre zákazníkov a jasné podmienky nákupu." }
 ];
 
 export function WhyAiper() {
@@ -21,11 +19,11 @@ export function WhyAiper() {
     <section id="preco" className="why">
       <p className="darkKicker center">Prečo si vybrať Aiper?</p>
       <div className="whyGrid">
-        {reasons.map(([IconComponent, title, text]) => (
-          <article key={title}>
-            <span><IconComponent /></span>
-            <b>{title}</b>
-            <small>{text}</small>
+        {reasons.map((reason) => (
+          <article key={reason.title}>
+            <span>{reason.icon}</span>
+            <b>{reason.title}</b>
+            <small>{reason.text}</small>
           </article>
         ))}
       </div>
