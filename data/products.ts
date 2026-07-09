@@ -7,6 +7,7 @@ export type Product = {
   oldPrice?: string;
   type: string;
   description: string;
+  image: string;
   specs: {
     battery: string;
     pool: string;
@@ -24,6 +25,7 @@ export const products: Product[] = [
     oldPrice: "799 €",
     type: "Dno · steny · vodná línia",
     description: "Najvyváženejší model pre rodinné bazény s prémiovým čistením.",
+    image: "/images/products/scuba-s1-pro.png",
     specs: { battery: "150 min", pool: "150 m²", filter: "180 μm" }
   },
   {
@@ -34,6 +36,7 @@ export const products: Product[] = [
     price: "899 €",
     type: "Dno · steny · vodná línia",
     description: "Pokročilý model pre náročnejšie bazény a plynulé čistenie.",
+    image: "/images/products/scuba-x1.png",
     specs: { battery: "160 min", pool: "200 m²", filter: "180 μm" }
   },
   {
@@ -44,6 +47,7 @@ export const products: Product[] = [
     price: "1 299 €",
     type: "Kompletné čistenie",
     description: "Maximálny výkon, dlhá výdrž a prémiové čistenie veľkých bazénov.",
+    image: "/images/products/scuba-x1-pro-max.png",
     specs: { battery: "240 min", pool: "300 m²", filter: "180 μm" }
   },
   {
@@ -54,14 +58,22 @@ export const products: Product[] = [
     price: "499 €",
     type: "Dno · steny",
     description: "Výkonné riešenie za rozumnú cenu pre menšie a stredné bazény.",
+    image: "/images/products/scuba-n1-ultra.png",
     specs: { battery: "120 min", pool: "120 m²", filter: "180 μm" }
   }
 ];
 
-export const poolTypes = [
-  ["Malé bazény", "do 80 m²", "Scuba SE / N1 Ultra"],
-  ["Stredné bazény", "80 – 150 m²", "Scuba S1 Pro"],
-  ["Veľké bazény", "150 – 300 m²", "Scuba X1 Pro Max"],
-  ["Steny a vodná línia", "kompletné čistenie", "Scuba X1"],
-  ["Prémiové riešenie", "bez kompromisov", "X1 Pro Max"]
-] as const;
+export type PoolType = {
+  title: string;
+  size: string;
+  model: string;
+  image: string;
+};
+
+export const poolTypes: PoolType[] = [
+  { title: "Malé bazény", size: "do 80 m²", model: "Scuba SE / N1 Ultra", image: "/images/pools/small.jpg" },
+  { title: "Stredné bazény", size: "80 – 150 m²", model: "Scuba S1 Pro", image: "/images/pools/medium.jpg" },
+  { title: "Veľké bazény", size: "150 – 300 m²", model: "Scuba X1 Pro Max", image: "/images/pools/large.jpg" },
+  { title: "Bazény so stenami", size: "a vodnou líniou", model: "Scuba X1", image: "/images/pools/walls.jpg" },
+  { title: "Prémiové riešenie", size: "bez kompromisov", model: "X1 Pro Max", image: "/images/pools/premium.jpg" }
+];

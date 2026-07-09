@@ -5,6 +5,7 @@ import { PoolChooser } from "@/components/PoolChooser";
 import { WhyAiper } from "@/components/WhyAiper";
 import { Experience } from "@/components/Experience";
 import { Footer } from "@/components/Footer";
+import { BoxIcon, HeadsetIcon, StarIcon, TruckIcon } from "@/components/icons";
 
 export default function Home() {
   return (
@@ -15,11 +16,14 @@ export default function Home() {
       <PoolChooser />
       <WhyAiper />
       <Experience />
-      <section className="reviewStrip">
-        <div><span>★★★★★</span><b>4,8/5</b><small>+2 000 recenzií</small></div>
-        <div><span>🚚</span><b>Doprava zdarma</b><small>nad 100 €</small></div>
-        <div><span>📦</span><b>Rýchle dodanie</b><small>1–2 pracovné dni</small></div>
-        <div><span>🎧</span><b>Slovenský servis</b><small>Sme tu pre vás</small></div>
+      <section className="reviewWrap">
+        <p className="darkKicker center">Overené tisíckami zákazníkov</p>
+        <div className="reviewStrip">
+          <div><span><StarIcon /></span><b>4,8/5</b><small>+2 000 recenzií</small></div>
+          <div><span><TruckIcon /></span><b>Doprava zdarma</b><small>nad 100 €</small></div>
+          <div><span><BoxIcon /></span><b>Rýchle dodanie</b><small>1–2 pracovné dni</small></div>
+          <div><span><HeadsetIcon /></span><b>Slovenský servis</b><small>Sme tu pre vás</small></div>
+        </div>
       </section>
       <Footer />
     </main>

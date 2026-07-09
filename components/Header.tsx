@@ -1,3 +1,5 @@
+import { CartIcon, SearchIcon, UserIcon } from "./icons";
+
 export function Header() {
   return (
     <header className="header">
@@ -7,12 +9,13 @@ export function Header() {
         <a href="#bazeny">Podľa bazéna</a>
         <a href="#preco">Prečo Aiper</a>
         <a href="#porovnanie">Porovnanie</a>
+        <a href="#prislusenstvo">Príslušenstvo</a>
         <a href="#kontakt">Podpora</a>
       </nav>
       <div className="headerActions">
-        <button aria-label="Vyhľadať">⌕</button>
-        <button aria-label="Účet">♙</button>
-        <button className="cartButton" aria-label="Košík">🛒<span>0</span></button>
+        <button aria-label="Vyhľadať"><SearchIcon /></button>
+        <button aria-label="Účet"><UserIcon /></button>
+        <button className="cartButton" aria-label="Košík"><CartIcon /><span>0</span></button>
       </div>
     </header>
   );
